@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="rumba">
+  <!-- link name base footprint -->
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0114474658239644 -0.000300154169751677 0.0273732527746511"
+        rpy="0 0 0" />
+      <mass
+        value="0.541845126233969" />
+      <inertia
+        ixx="0.00352705105773584"
+        ixy="9.73897841348834E-06"
+        ixz="-2.89573090937698E-05"
+        iyy="0.00208717872379356"
+        iyz="3.50076500830417E-07"
+        izz="0.00545557646955709" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://romba_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://romba_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Rueda_loca_Link">
+    <inertial>
+      <origin
+        xyz="-1.81133603943673E-05 0.00332934047917247 0.0105849509860821"
+        rpy="0 0 0" />
+      <mass
+        value="0.00502921680620392" />
+      <inertia
+        ixx="2.27248756479945E-07"
+        ixy="1.66997385477817E-30"
+        ixz="-1.0097419586829E-26"
+        iyy="2.27248756479945E-07"
+        iyz="0"
+        izz="2.27248756479945E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://romba_description/meshes/Rueda_loca_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://romba_description/meshes/Rueda_loca_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Rueda_loca_joint"
+    type="continuous">
+    <origin
+      xyz="-0.13436 -0.010606 -0.086201"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="Rueda_loca_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="right_wheel_Link">
+    <inertial>
+      <origin
+        xyz="0 -2.77555756156289E-17 0.00749999999999999"
+        rpy="0 0 0" />
+      <mass
+        value="0.0610725611857855" />
+      <inertia
+        ixx="2.0932620346428E-05"
+        ixy="6.35274710440857E-22"
+        ixz="-4.1776826726059E-20"
+        iyy="2.0932620346428E-05"
+        iyz="-5.65831699204526E-20"
+        izz="3.9575019648389E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://romba_description/meshes/right_wheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://romba_description/meshes/right_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0076679 -0.12198 -0.0575"
+      rpy="1.5708 0 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="left_wheel_Link">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 0 -0.00750000000000001"
+        rpy="0 0 0" />
+      <mass
+        value="0.0610725611857856" />
+      <inertia
+        ixx="2.0932620346428E-05"
+        ixy="1.01836456557721E-34"
+        ixz="-3.58068407770627E-20"
+        iyy="2.0932620346428E-05"
+        iyz="-5.41916912632158E-20"
+        izz="3.9575019648389E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://romba_description/meshes/left_wheel_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://romba_description/meshes/left_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0076679 0.12202 -0.0575"
+      rpy="1.5708 0 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="lidar_Link">
+    <inertial>
+      <origin
+        xyz="-4.143909344001E-07 1.39012424956722E-06 0.0139149783331685"
+        rpy="0 0 0" />
+      <mass
+        value="0.0327702426605751" />
+      <inertia
+        ixx="5.32741597885733E-06"
+        ixy="5.61946054104764E-08"
+        ixz="1.49615420131096E-10"
+        iyy="5.32747011079532E-06"
+        iyz="-5.04966034296719E-10"
+        izz="6.05355149211279E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://romba_description/meshes/lidar_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://romba_description/meshes/lidar_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="0.015028 -0.0021627 0.054"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="base_camara_Link">
+    <inertial>
+      <origin
+        xyz="-0.000109696138764517 0.00697582291652946 -0.0268868512130253"
+        rpy="0 0 0" />
+      <mass
+        value="0.0148862149761295" />
+      <inertia
+        ixx="1.15012520847868E-05"
+        ixy="3.45742562805251E-14"
+        ixz="-5.40587398664585E-13"
+        iyy="1.27539401294926E-05"
+        iyz="9.9041865948582E-07"
+        izz="1.95310781946111E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://romba_description/meshes/base_camara_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://romba_description/meshes/base_camara_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_camara_joint"
+    type="fixed">
+    <origin
+      xyz="0.083406757633984 -0.00119566583589058 0.0570000132125491"
+      rpy="-3.1415924951788 0 -1.57106957993261" />
+    <parent
+      link="base_link" />
+    <child
+      link="base_camara_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="camara_Link">
+    <inertial>
+      <origin
+        xyz="1.12611940950656E-05 -0.000136119904566467 0.0115561186115041"
+        rpy="0 0 0" />
+      <mass
+        value="0.0398913460574527" />
+      <inertia
+        ixx="2.85007430898902E-06"
+        ixy="-3.77454363118495E-11"
+        ixz="-6.70504174760317E-09"
+        iyy="2.59712686163206E-05"
+        iyz="1.82031480649354E-08"
+        izz="2.6340266289272E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://romba_description/meshes/camara_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://romba_description/meshes/camara_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camara_joint"
+    type="fixed">
+    <origin
+      xyz="-0.000109697416176992 0.0221833198448395 -0.0925000000000043"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="base_camara_Link" />
+    <child
+      link="camara_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

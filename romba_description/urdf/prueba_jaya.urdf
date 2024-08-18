@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="prueba_jaya">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.046344 -0.00040698 0.043458"
+        rpy="0 0 0" />
+      <mass
+        value="35.592" />
+      <inertia
+        ixx="0.28872"
+        ixy="0.0043751"
+        ixz="0.007308"
+        iyy="0.17123"
+        iyz="0.00033454"
+        izz="0.42993" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prueba_jaya/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prueba_jaya/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="rueda_derecha_link">
+    <inertial>
+      <origin
+        xyz="0 8.6736E-19 1.3878E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.54355" />
+      <inertia
+        ixx="0.0001863"
+        ixy="1.4078E-33"
+        ixz="-1.0337E-16"
+        iyy="0.0001863"
+        iyz="-2.2382E-21"
+        izz="0.00035222" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prueba_jaya/meshes/rueda_derecha_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.53725 0.34902 0.33725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prueba_jaya/meshes/rueda_derecha_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rueda_derecha_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.11755 0.023608"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="rueda_derecha_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="rueda_izquierda_link">
+    <inertial>
+      <origin
+        xyz="1.0534E-19 8.6736E-19 -1.3878E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.54355" />
+      <inertia
+        ixx="0.0001863"
+        ixy="-1.3925E-33"
+        ixz="-1.032E-16"
+        iyy="0.0001863"
+        iyz="2.2382E-21"
+        izz="0.00035222" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prueba_jaya/meshes/rueda_izquierda_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.53725 0.34902 0.33725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prueba_jaya/meshes/rueda_izquierda_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rueda_izquierda_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.11755 0.023608"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="rueda_izquierda_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="castor_front_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.081382" />
+      <inertia
+        ixx="5.478E-06"
+        ixy="0"
+        ixz="-2.6151E-38"
+        iyy="5.478E-06"
+        iyz="1.9156E-38"
+        izz="5.478E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prueba_jaya/meshes/castor_front_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.53725 0.34902 0.33725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prueba_jaya/meshes/castor_front_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="castor_front_joint"
+    type="fixed">
+    <origin
+      xyz="0.126 0 0.00058007"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="castor_front_link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="castor_back_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.081382" />
+      <inertia
+        ixx="5.478E-06"
+        ixy="0"
+        ixz="-2.6151E-38"
+        iyy="5.478E-06"
+        iyz="1.9156E-38"
+        izz="5.478E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prueba_jaya/meshes/castor_back_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.53725 0.34902 0.33725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prueba_jaya/meshes/castor_back_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="castor_back_joint"
+    type="fixed">
+    <origin
+      xyz="-0.126 0 0.00058007"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="castor_back_link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="lidar_link">
+    <inertial>
+      <origin
+        xyz="4.1219E-07 -1.3901E-06 0.013915"
+        rpy="0 0 0" />
+      <mass
+        value="0.08848" />
+      <inertia
+        ixx="1.4384E-05"
+        ixy="1.5173E-07"
+        ixz="-4.0427E-10"
+        iyy="1.4384E-05"
+        iyz="1.3634E-09"
+        izz="1.6345E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prueba_jaya/meshes/lidar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prueba_jaya/meshes/lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="-0.026219 0.0017912 0.1385"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar_link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="camara_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.005" />
+      <inertia
+        ixx="1.4384E-05"
+        ixy="1.4384E-05"
+        ixz="1.4384E-05"
+        iyy="1.4384E-05"
+        iyz="1.4384E-05"
+        izz="1.4384E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prueba_jaya/meshes/camara_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prueba_jaya/meshes/camara_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camara_joint"
+    type="fixed">
+    <origin
+      xyz="-0.072415 0.00070842 0.234"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="camara_link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+</robot>

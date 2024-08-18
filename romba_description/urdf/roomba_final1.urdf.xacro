@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="roomba_final1">
+
+  <!-- Propiedades Comunes -->
+  <xacro:property name="color_silver" value="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+  <xacro:property name="color_gray" value="0.74902 0.74902 0.74902 1" />
+
+  <!-- Links -->
+  <link name="base_footprint"/>
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.00218120542640235 0.000338633491901637 0.109079961647412" rpy="0 0 0" />
+      <mass value="0.556734338068349" />
+      <inertia ixx="0.0036150957492384" ixy="9.51918549642332E-06" ixz="0.000373469425941911" iyy="0.00209869293547968" iyz="-2.14075951798952E-06" izz="0.00538227582872374" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="${color_silver}" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="rueda_izquierda_link">
+    <inertial>
+      <origin xyz="0 0 -0.0075" rpy="0 0 0" />
+      <mass value="0.059894" />
+      <inertia ixx="2.0903E-05" ixy="4.2352E-22" ixz="9.1754E-21" iyy="2.0903E-05" iyz="-1.2671E-20" izz="3.956E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/Rueda_izquierda_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="${color_gray}" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/Rueda_izquierda_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="rueda_derecha_link">
+    <inertial>
+      <origin xyz="2.7756E-17 -2.7756E-17 0.0075" rpy="0 0 0" />
+      <mass value="0.059894" />
+      <inertia ixx="2.0903E-05" ixy="7.6014E-36" ixz="-1.9331E-20" iyy="2.0903E-05" iyz="-5.4394E-21" izz="3.956E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/Rueda_derecha_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="${color_gray}" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/Rueda_derecha_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="rueda_loca1_link">
+    <inertial>
+      <origin xyz="-2.5906E-06 1.5179E-18 -0.00030515" rpy="0 0 0" />
+      <mass value="0.0042425" />
+      <inertia ixx="1.9235E-07" ixy="8.603E-26" ixz="2.145E-10" iyy="1.9235E-07" iyz="7.8582E-24" izz="2.1762E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/rueda_loca1_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="${color_gray}" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/rueda_loca1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="rueda_loca_link">
+    <inertial>
+      <origin xyz="0 2.0503E-13 -0.00030516" rpy="0 0 0" />
+      <mass value="0.0042425" />
+      <inertia ixx="1.9235E-07" ixy="-3.1019E-25" ixz="1.1357E-23" iyy="1.9235E-07" iyz="-1.6977E-17" izz="2.1762E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/rueda_loca_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="${color_gray}" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/rueda_loca_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="camara_link">
+    <inertial>
+      <origin xyz="0.011556 8.1034E-06 -0.00013612" rpy="0 0 0" />
+      <mass value="0.039891" />
+      <inertia ixx="2.634E-05" ixy="-1.3124E-08" ixz="1.8203E-08" iyy="2.8501E-06" iyz="-4.272E-11" izz="2.5971E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/camara_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="${color_silver}" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/camara_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="lidar_link">
+    <inertial>
+      <origin xyz="4.1439E-07 -1.3901E-06 0.013915" rpy="0 0 0" />
+      <mass value="0.03277" />
+      <inertia ixx="5.3274E-06" ixy="5.6195E-08" ixz="-1.4962E-10" iyy="5.3275E-06" iyz="5.0497E-10" izz="6.0536E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/lidar_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.99608 0.99608 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Joints -->
+  <joint name="base_joint" type="fixed">
+    <origin xyz="0 0 0.01" rpy="0 0 0" />
+    <parent link="base_footprint" />
+    <child link="base_link" />
+  </joint>
+
+  <joint name="rueda_izquierda_joint" type="continuous">
+    <origin xyz="0.0067551 0.12199 0.020332" rpy="-1.5708 -1.4914 0" />
+    <parent link="base_link" />
+    <child link="rueda_izquierda_link" />
+    <axis xyz="0 0 1" />
+    <limit effort="1000" velocity="1000" />
+    <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <joint name="rueda_derecha_joint" type="continuous">
+    <origin xyz="0.0067551 -0.122 0.020332" rpy="-1.5708 0.18537 0" />
+    <parent link="base_link" />
+    <child link="rueda_derecha_link" />
+    <axis xyz="0 0 1" />
+    <limit effort="1000" velocity="1000" />
+    <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <joint name="rueda_loca1_joint" type="fixed">
+    <origin xyz="-0.10848 2.2157E-05 0.015493" rpy="-0.020842 0.13825 0" />
+    <parent link="base_link" />
+    <child link="rueda_loca1_link" />
+    <axis xyz="0 0 0" />
+    <limit effort="1000" velocity="1000" />
+    <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <joint name="rueda_loca_joint" type="fixed">
+    <origin xyz="0.12647 3.8976E-05 -0.028566" rpy="0.001491 0.18536 0.0080897" />
+    <parent link="base_link" />
+    <child link="rueda_loca_link" />
+    <axis xyz="0 0 0" />
+    <limit effort="100" velocity="100" />
+    <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <joint name="camara_joint" type="fixed">
+    <origin xyz="-0.022804 0.0010978 0.23648" rpy="0 0.18537 0" />
+    <parent link="base_link" />
+    <child link="camara_link" />
+    <axis xyz="0 0 0" />
+    <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <joint name="laser_joint" type="fixed">
+    <origin xyz="0.0049984 0.0021806 0.13411" rpy="0 0.18537 0" />
+    <parent link="base_link" />
+    <child link="lidar_link" />
+    <axis xyz="0 0 0" />
+    <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+</robot>

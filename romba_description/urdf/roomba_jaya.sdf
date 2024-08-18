@@ -1,0 +1,214 @@
+<sdf version='1.7'>
+  <model name='roomba_jaya'>
+    <link name='base_link'>
+      <inertial>
+        <pose>-0.007544 -5.7e-05 0.083205 0 -0 0</pose>
+        <mass>0.885248</mass>
+        <inertia>
+          <ixx>0.00545843</ixx>
+          <ixy>4.56009e-06</ixy>
+          <ixz>0.000290802</ixz>
+          <iyy>0.00549961</iyy>
+          <iyz>-1.83913e-07</iyz>
+          <izz>0.00835122</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roomba_jaya/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__camara_link_collision_1'>
+        <pose>-0.045307 0 0.20223 1.5708 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roomba_jaya/meshes/camara_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__castor_back_link_collision_2'>
+        <pose>-0.1045 0 -0.005122 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roomba_jaya/meshes/castor_back_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__castor_front_link_collision_3'>
+        <pose>0.12959 0 -0.005122 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roomba_jaya/meshes/castor_front_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__lidar_link_collision_4'>
+        <pose>0.001055 0.00423 0.10673 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roomba_jaya/meshes/lidar_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roomba_jaya/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__camara_link_visual_1'>
+        <pose>-0.045307 0 0.20223 1.5708 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roomba_jaya/meshes/camara_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__castor_back_link_visual_2'>
+        <pose>-0.1045 0 -0.005122 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roomba_jaya/meshes/castor_back_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__castor_front_link_visual_3'>
+        <pose>0.12959 0 -0.005122 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roomba_jaya/meshes/castor_front_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__lidar_link_visual_4'>
+        <pose>0.001055 0.00423 0.10673 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roomba_jaya/meshes/lidar_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='derecha_joint' type='revolute'>
+      <pose relative_to='base_link'>0.006853 -0.12201 0.020207 -1.57079 1.57079 3.14159</pose>
+      <parent>base_link</parent>
+      <child>rueda_derecha_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>100</effort>
+          <velocity>100</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rueda_derecha_link'>
+      <pose relative_to='derecha_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0.0075 0 -0 0</pose>
+        <mass>0.54355</mass>
+        <inertia>
+          <ixx>0.0001863</ixx>
+          <ixy>6.0661e-33</ixy>
+          <ixz>8.2961e-18</ixz>
+          <iyy>0.0001863</iyy>
+          <iyz>1.0791e-19</iyz>
+          <izz>0.00035222</izz>
+        </inertia>
+      </inertial>
+      <collision name='rueda_derecha_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roomba_jaya/meshes/rueda_derecha_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='rueda_derecha_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roomba_jaya/meshes/rueda_derecha_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='izquierda_joint' type='revolute'>
+      <pose relative_to='base_link'>0.006881 0.12199 0.020249 -1.57079 1.57079 3.14159</pose>
+      <parent>base_link</parent>
+      <child>rueda_izquierda_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>100</effort>
+          <velocity>100</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <friction>0.1</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rueda_izquierda_link'>
+      <pose relative_to='izquierda_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 0 -0.0075 0 -0 0</pose>
+        <mass>0.54355</mass>
+        <inertia>
+          <ixx>0.0001863</ixx>
+          <ixy>-3.9477e-29</ixy>
+          <ixz>1.1149e-13</ixz>
+          <iyy>0.0001863</iyy>
+          <iyz>-5.7637e-20</iyz>
+          <izz>0.00035222</izz>
+        </inertia>
+      </inertial>
+      <collision name='rueda_izquierda_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roomba_jaya/meshes/rueda_izquierda_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='rueda_izquierda_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roomba_jaya/meshes/rueda_izquierda_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

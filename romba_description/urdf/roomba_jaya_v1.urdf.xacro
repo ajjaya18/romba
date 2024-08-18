@@ -1,0 +1,398 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="roomba_jaya_v1">
+
+  <!-- Propiedades Comunes -->
+  <xacro:property name="color_silver" value="0.79216 0.81961 0.93333 1" />
+  <xacro:property name="color_gray" value="0.74902 0.74902 0.74902 1" />
+  <xacro:property name="color_base" value="1 1 1 0.35" />
+  <xacro:property name="color_rueda" value="0.53725 0.34902 0.33725 1" />
+
+  <!-- Links -->
+  <link name="base_footprint"/>
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-0.0093355 -8.3957E-05 0.089562" rpy="0 0 0" />
+      <mass value="0.76674" />
+      <inertia ixx="0.0041566" ixy="7.7171E-07" ixz="4.6778E-06" iyy="0.0029256" iyz="-1.0362E-08" izz="0.007036" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="${color_base}" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="rueda_derecha_link">
+    <inertial>
+      <origin xyz="0 6.9389E-18 1.3878E-17" rpy="0 0 0" />
+      <mass value="0.54355" />
+      <inertia ixx="0.0001863" ixy="1.4695E-22" ixz="-2.1869E-13" iyy="0.0001863" iyz="-1.1148E-13" izz="0.00035222" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/rueda_derecha_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="${color_rueda}" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/rueda_derecha_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="rueda_izquierda_link">
+    <inertial>
+      <origin xyz="0 6.9389E-18 1.3878E-17" rpy="0 0 0" />
+      <mass value="0.54355" />
+      <inertia ixx="0.0001863" ixy="-1.1556E-26" ixz="2.1869E-13" iyy="0.0001863" iyz="-8.79E-18" izz="0.00035222" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/rueda_izquierda_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="${color_rueda}" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/rueda_izquierda_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="castor_front_link">
+    <inertial>
+      <origin xyz="0 3.2526E-19 0" rpy="0 0 0" />
+      <mass value="0.04476" />
+      <inertia ixx="2.0225E-06" ixy="8.7865E-39" ixz="-2.9848E-29" iyy="2.0225E-06" iyz="3.6436E-33" izz="2.0225E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/castor_front_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="${color_rueda}" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/castor_front_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="castor_back_link">
+    <inertial>
+      <origin xyz="0 3.2526E-19 0" rpy="0 0 0" />
+      <mass value="0.04476" />
+      <inertia ixx="2.0225E-06" ixy="1.0325E-36" ixz="1.8655E-30" iyy="2.0225E-06" iyz="-1.9278E-28" izz="2.0225E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/castor_back_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="${color_rueda}" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/castor_back_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="camara_link">
+    <inertial>
+      <origin xyz="0.011556 1.1261E-05 -0.00013612" rpy="0 0 0" />
+      <mass value="0.10771" />
+      <inertia ixx="7.1119E-05" ixy="-1.8104E-08" ixz="4.9149E-08" iyy="7.6952E-06" iyz="-1.019E-10" izz="7.0122E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/camara_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="${color_silver}" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/camara_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="lidar_link">
+    <inertial>
+      <origin xyz="-1.3901E-06 -4.1219E-07 0.013915" rpy="0 0 0" />
+      <mass value="0.08848" />
+      <inertia ixx="1.4384E-05" ixy="-1.5173E-07" ixz="1.3634E-09" iyy="1.4384E-05" iyz="4.0427E-10" izz="1.6345E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/lidar_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="${color_gray}" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://romba_description/meshes/lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="imu_link"/>
+
+  <!-- Joints -->
+  <joint name="base_joint" type="fixed">
+    <origin xyz="0 0 0.01" rpy="0 0 0" />
+    <parent link="base_footprint" />
+    <child link="base_link" />
+  </joint>
+
+  <joint name="rueda_derecha_joint" type="continuous">
+    <origin xyz="0.0041248 -0.11845 0.020249" rpy="1.5708 0 3.1416" />
+    <parent link="base_link" />
+    <child link="rueda_derecha_link" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="100" />
+    <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <joint name="rueda_izquierda_joint" type="continuous">
+    <origin xyz="0.0041248 0.11843 0.020249" rpy="1.5708 0 3.1416" />
+    <parent link="base_link" />
+    <child link="rueda_izquierda_link" />
+    <axis xyz="0 0 1" />
+    <limit effort="100" velocity="100" />
+    <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <joint name="castor_front_joint" type="fixed">
+    <origin xyz="0.12959 0 -0.0051221" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="castor_front_link" />
+    <axis xyz="0 0 0" />
+    <limit effort="100" velocity="100" />
+    <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <joint name="castor_back_joint" type="fixed">
+    <origin xyz="-0.12241 0 -0.0051221" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="castor_back_link" />
+    <axis xyz="0 0 0" />
+    <limit effort="100" velocity="100" />
+    <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <joint name="camara_joint" type="fixed">
+    <origin xyz="-0.045307 0 0.20223" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="camara_link" />
+    <axis xyz="0 0 0" />
+    <limit effort="100" velocity="100" />
+    <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <joint name="lidar_joint" type="fixed">
+    <origin xyz="0.0010554 0.0042304 0.10673" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="lidar_link" />
+    <axis xyz="0 0 0" />
+    <limit effort="100" velocity="100" />
+    <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="-0.032 0 0.068" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Configuration Wheels -->
+  <gazebo reference="rueda_izquierda_link">
+    <mu1>10000.0</mu1>
+    <mu2>10000.0</mu2>
+    <kp>3000000.0</kp>
+    <kd>90.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+
+  <gazebo reference="rueda_derecha_link">
+    <mu1>10000.0</mu1>
+    <mu2>10000.0</mu2>
+    <kp>3000000.0</kp>
+    <kd>90.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+  
+  <gazebo reference="castor_front_link">
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+
+  <gazebo reference="castor_back_link">
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+  
+  <!-- Plugin -->
+  <gazebo>
+    <!-- Plugin control ruedas diferenciales -->
+    <plugin name="wheel_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <ros>
+        <namespace></namespace>
+        <remapping>cmd_vel:=cmd_vel</remapping>
+        <remapping>odom:=odom</remapping>
+      </ros>
+      <update_rate>1</update_rate>
+      <left_joint>rueda_izquierda_joint</left_joint>
+      <right_joint>rueda_derecha_joint</right_joint>
+      <wheel_separation>0.22188</wheel_separation>
+      <wheel_diameter>0.072</wheel_diameter>
+      <max_wheel_torque>10</max_wheel_torque>
+      <max_wheel_acceleration>1.0</max_wheel_acceleration>
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <publish_wheel_tf>true</publish_wheel_tf>
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>base_footprint</robot_base_frame>
+    </plugin>
+  </gazebo>
+  <!-- ************************* -->
+  <!-- ***** GAZEBO LASER ****** -->
+  <!-- ************************* -->
+  <gazebo reference="lidar_link">
+    <material>Gazebo/FlatBlack</material>
+    <sensor type="ray" name="lds_lfcd_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <always_on>true</always_on>
+      <update_rate>10.0</update_rate>
+      <visualize>true</visualize>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>0.0</min_angle>
+            <max_angle>6.28319</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.120</min>
+          <max>2.0</max>
+          <resolution>0.015</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_lds_lfcd_controller" filename="libgazebo_ros_ray_sensor.so">
+        <ros>
+          <namespace></namespace>
+          <remapping>~/out:=scan</remapping>
+        </ros>
+        <output_type>sensor_msgs/LaserScan</output_type>
+      </plugin>
+    </sensor>
+  </gazebo>
+  
+  <!-- ************************* -->
+  <!-- **** GAZEBO CAM_LINK **** -->
+  <!-- ************************* -->
+  <gazebo reference="camara_link">
+      <material>Gazebo/Black</material>
+      <sensor name="camera" type="camera">
+        <pose> 0 0 0 0 0 0 </pose>
+        <visualize>true</visualize>
+        <update_rate>30</update_rate>
+        <camera>
+            <horizontal_fov>1.085595</horizontal_fov>
+            <image>
+                <format>R8G8B8</format>
+                <width>640</width>
+                <height>480</height>
+            </image>
+            <clip>
+                <near>0.03</near>
+                <far>100</far>
+            </clip>
+        </camera>
+        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+            <frame_name>camera_link</frame_name>
+        </plugin>
+      </sensor>
+      <sensor name="intel_realsense_d435_depth" type="depth">
+        <pose> 0 0 0 0 0 0 </pose>
+        <always_on>true</always_on>
+        <update_rate>20</update_rate>
+        <camera name="realsense_depth_camera">
+        </camera>
+        <plugin name="intel_realsense_d435_depth_driver" filename="libgazebo_ros_camera.so">
+            <camera_name>intel_realsense_d435_depth</camera_name>
+            <frame_name>camera_link</frame_name>
+            <hack_baseline>0.07</hack_baseline>
+            <min_depth>0.001</min_depth>
+          </plugin>
+      </sensor>
+  </gazebo>
+
+
+  <!-- ************************* -->
+  <!-- **** GAZEBO IMU_LINK **** -->
+  <!-- ************************* -->
+  <gazebo reference="imu_link">
+    <material>Gazebo/Grey</material>
+    <sensor type="imu" name="imu">
+      <always_on>true</always_on>
+      <update_rate>100.0</update_rate>
+      <visualize>true</visualize>
+    </sensor>
+  </gazebo>
+
+
+
+   
+
+</robot>

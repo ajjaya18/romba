@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="roomba_jaya_v1">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0093355 -8.3957E-05 0.089562"
+        rpy="0 0 0" />
+      <mass
+        value="0.76674" />
+      <inertia
+        ixx="0.0041566"
+        ixy="7.7171E-07"
+        ixz="4.6778E-06"
+        iyy="0.0029256"
+        iyz="-1.0362E-08"
+        izz="0.007036" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roomba_jaya_v1/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.53725 0.34902 0.33725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roomba_jaya_v1/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="rueda_derecha_link">
+    <inertial>
+      <origin
+        xyz="0 6.9389E-18 1.3878E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.54355" />
+      <inertia
+        ixx="0.0001863"
+        ixy="1.4695E-22"
+        ixz="-2.1869E-13"
+        iyy="0.0001863"
+        iyz="-1.1148E-13"
+        izz="0.00035222" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roomba_jaya_v1/meshes/rueda_derecha_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.53725 0.34902 0.33725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roomba_jaya_v1/meshes/rueda_derecha_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rueda_derecha_joint"
+    type="continuous">
+    <origin
+      xyz="0.0041248 -0.11845 0.020249"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="rueda_derecha_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="rueda_izquierda_link">
+    <inertial>
+      <origin
+        xyz="0 6.9389E-18 1.3878E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.54355" />
+      <inertia
+        ixx="0.0001863"
+        ixy="-1.1556E-26"
+        ixz="2.1869E-13"
+        iyy="0.0001863"
+        iyz="-8.79E-18"
+        izz="0.00035222" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roomba_jaya_v1/meshes/rueda_izquierda_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.53725 0.34902 0.33725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roomba_jaya_v1/meshes/rueda_izquierda_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rueda_izquierda_joint"
+    type="continuous">
+    <origin
+      xyz="0.0041248 0.11843 0.020249"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="rueda_izquierda_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="castor_front_link">
+    <inertial>
+      <origin
+        xyz="0 3.2526E-19 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.04476" />
+      <inertia
+        ixx="2.0225E-06"
+        ixy="8.7865E-39"
+        ixz="-2.9848E-29"
+        iyy="2.0225E-06"
+        iyz="3.6436E-33"
+        izz="2.0225E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roomba_jaya_v1/meshes/castor_front_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.53725 0.34902 0.33725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roomba_jaya_v1/meshes/castor_front_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="castor_front_joint"
+    type="fixed">
+    <origin
+      xyz="0.12959 0 -0.0051221"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="castor_front_link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="castor_back_link">
+    <inertial>
+      <origin
+        xyz="0 3.2526E-19 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.04476" />
+      <inertia
+        ixx="2.0225E-06"
+        ixy="1.0325E-36"
+        ixz="1.8655E-30"
+        iyy="2.0225E-06"
+        iyz="-1.9278E-28"
+        izz="2.0225E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roomba_jaya_v1/meshes/castor_back_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.53725 0.34902 0.33725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roomba_jaya_v1/meshes/castor_back_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="castor_back_joint"
+    type="fixed">
+    <origin
+      xyz="-0.12241 0 -0.0051221"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="castor_back_link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="camara_link">
+    <inertial>
+      <origin
+        xyz="0.011556 1.1261E-05 -0.00013612"
+        rpy="0 0 0" />
+      <mass
+        value="0.10771" />
+      <inertia
+        ixx="7.1119E-05"
+        ixy="-1.8104E-08"
+        ixz="4.9149E-08"
+        iyy="7.6952E-06"
+        iyz="-1.019E-10"
+        izz="7.0122E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roomba_jaya_v1/meshes/camara_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roomba_jaya_v1/meshes/camara_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camara_joint"
+    type="fixed">
+    <origin
+      xyz="-0.045307 0 0.20223"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="camara_link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="lidar_link">
+    <inertial>
+      <origin
+        xyz="-1.3901E-06 -4.1219E-07 0.013915"
+        rpy="0 0 0" />
+      <mass
+        value="0.08848" />
+      <inertia
+        ixx="1.4384E-05"
+        ixy="-1.5173E-07"
+        ixz="1.3634E-09"
+        iyy="1.4384E-05"
+        iyz="4.0427E-10"
+        izz="1.6345E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roomba_jaya_v1/meshes/lidar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roomba_jaya_v1/meshes/lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="0.0010554 0.0042304 0.10673"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar_link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+</robot>
